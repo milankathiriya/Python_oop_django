@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Multiple Inheritance</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+        <code>
+        <pre>
+class First:
+    def hello(self):
+        print("HELLO First")
+
+
+class Second:
+    def hi(self):
+        print("HELLO Second")
+
+
+class Third(First, Second):
+    def py(self):
+        print("HELLO Third")
+
+
+
+o = Third()
+o.hello()
+o.hi()
+o.py()
+
+
+print(isinstance(o,Third))
+print(issubclass(Second,First))
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+HELLO First
+HELLO Second
+HELLO Third
+True
+False
+        </pre>
+    </code>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

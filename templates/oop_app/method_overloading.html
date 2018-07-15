@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Method Overloading</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+        <code>
+        <pre>
+class Person:
+
+    def show(self, name=None):
+        if name is not None:
+            print("Name : " + name)
+        else:
+            print("Anonymous.")
+
+
+
+p = Person()
+
+p.show()
+p.show('Milan')
+p.show('Vishal')
+
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+Anonymous.
+Name : Milan
+Name : Vishal
+        </pre>
+    </code>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Method Overriding</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+
+        <code>
+        <pre>
+class Parent:
+
+    def height(self):
+        print("Adult height >= 5")
+
+
+
+class Base(Parent):
+
+    def height(self):
+        print("-----After overriding-----")
+        print("Adult height < 5")
+
+
+
+a = Parent()
+a.height()
+
+
+c = Base()
+c.height()
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+Adult height >= 5
+-----After overriding-----
+Adult height < 5
+        </pre>
+    </code>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

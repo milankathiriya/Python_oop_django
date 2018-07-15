@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Polymorphism</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+
+        <code>
+        <pre>
+class Dog:
+
+    def speak(self):
+        print("Dog barking.")
+
+    def spot(self):
+        print("Dog have spots.")
+
+
+class Cat:
+    def speak(self):
+        print("Cat barking.")
+
+    def spot(self):
+        print("Cat have spots.")
+
+
+d = Dog()
+c = Cat()
+
+d.speak()
+c.speak()
+
+d.spot()
+c.spot()
+
+
+# polyphormic way
+print("\nusing poly. looping way")
+for animal in [d, c]:
+    animal.speak()
+    animal.spot()
+
+
+# using polyphormic function
+def species(s):
+    print("\nUsing poly. func")
+    s.speak()
+    s.spot()
+
+
+species(d)
+species(c)
+
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+Dog barking.
+Cat barking.
+Dog have spots.
+Cat have spots.
+
+using poly. looping way
+Dog barking.
+Dog have spots.
+Cat barking.
+Cat have spots.
+
+Using poly. func
+Dog barking.
+Dog have spots.
+
+Using poly. func
+Cat barking.
+Cat have spots.
+        </pre>
+    </code>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

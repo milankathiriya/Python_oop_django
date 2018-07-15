@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Encapsulation & Data Abstraction</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+        <code>
+        <pre>
+class Enc:
+
+    # declare private attribute
+    __age = 21
+
+    # declare protected attribute
+    _gender = 'male'
+
+    def first_name(self):
+        print("My name is Milan.")
+
+    # declare private method
+    def __last_name(self):
+        print("My last name is Kathiriya.")
+
+    # declare protected method
+    def _lang(self):
+        print("Python")
+
+
+m = Enc()
+m.first_name()
+
+# call private attribute
+# _[class_name]__[attribute]
+a = m._Enc__age
+print(a)
+
+# call private method
+# _[class_name]__[method]
+m._Enc__last_name()
+
+
+# call protected attribute
+# _[attribute]
+print(m._gender)
+
+# call protected method
+# _[method]
+m._lang()
+
+
+
+
+class Prot(Enc):
+
+    def __init__(self):
+        print("-----Subclass-----")
+
+
+
+n = Prot()
+# call protected attribute
+# _[attribute]
+g = n._gender
+print(g)
+
+# call protected method
+# _[method]
+n._lang()
+
+
+
+
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+My name is Milan.
+21
+My last name is Kathiriya.
+male
+Python
+-----Subclass-----
+male
+Python
+        </pre>
+    </code>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

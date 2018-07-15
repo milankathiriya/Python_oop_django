@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1>Class</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <span class="text-info">Code:</span><hr/>
+
+        <code>
+        <pre>
+class Parent:
+
+  def __init__(self):
+      print("Parent Class.")
+
+  def show(self):
+      print("Displaying parent.")
+
+
+class Child1(Parent):
+
+  def __init__(self):
+      super(Child1, self).__init__()
+      super(Child1, self).show()
+      print("First Child Class.")
+
+
+class Child2(Child1):
+
+  def __init__(self):
+      super(Child2, self).__init__()
+      print("Second Child Class.")
+
+
+Child2()
+
+        </pre>
+        </code>
+    </div>
+
+    <div class="col-md-6">
+    <span class="text-info">Output:</span><hr/>
+    <code>
+        <pre>
+Parent Class.
+Displaying parent.
+First Child Class.
+Second Child Class.
+        </pre>
+    </code>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}
