@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views.generic import TemplateView
 # Create your views here.
 
 
@@ -9,8 +9,11 @@ def home(request):
 def class_page(request):
     return render(request, 'oop_app/class.html')
 
-def encapsulation(request):
-    return render(request, 'oop_app/encap_abstract.html')
+class Encapsulation(TemplateView):
+	template_name = 'oop_app/encap_abstract.html'
+
+# def encapsulation(request):
+#     return render(request, 'oop_app/encap_abstract.html')
 
 def inheritance(request):
     return render(request, 'oop_app/inheritance.html')
